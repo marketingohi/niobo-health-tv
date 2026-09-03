@@ -9,7 +9,7 @@ export default function Valores({ theme }) {
       <div className="relative mb-10 flex flex-col items-center py-4">
         <motion.span
           aria-hidden="true"
-          className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-[10rem] font-bold uppercase leading-none tracking-wide"
+          className="pointer-events-none absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-[clamp(3.5rem,_6.8vw,_10rem)] font-bold uppercase leading-none tracking-wide"
           style={{ color: '#0D5257', opacity: 0.1 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.1 }}
@@ -40,7 +40,7 @@ export default function Valores({ theme }) {
           >
             <span
               aria-hidden="true"
-              className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none text-[13rem] font-light uppercase leading-none tracking-wide"
+              className="pointer-events-none absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 select-none text-[clamp(4.2rem,_8.7vw,_13rem)] font-light uppercase leading-none tracking-wide"
               style={{ color: '#0D5257', opacity: 0.1 }}
             >
               {v.letter}

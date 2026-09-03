@@ -13,7 +13,7 @@ export default function Company({ theme }) {
       <div className="relative mb-16 flex flex-col items-center py-4">
         <motion.span
           aria-hidden="true"
-          className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-[10rem] font-bold uppercase leading-none tracking-wide text-white"
+          className="pointer-events-none absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-[clamp(3.5rem,_6.8vw,_10rem)] font-bold uppercase leading-none tracking-wide text-white"
           style={{ opacity: 0.12 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.12 }}

@@ -8,7 +8,7 @@ export default function QuienesSomos({ theme }) {
       <div className="relative flex flex-col items-center py-6">
         <motion.span
           aria-hidden="true"
-          className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-[12rem] font-bold uppercase leading-none tracking-wide text-white"
+          className="pointer-events-none absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-[clamp(4rem,_8vw,_12rem)] font-bold uppercase leading-none tracking-wide text-white"
           style={{ opacity: 0.12 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.12 }}

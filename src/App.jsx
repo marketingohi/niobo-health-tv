@@ -101,7 +101,7 @@ export default function App() {
           animate="center"
           exit="exit"
           transition={TRANSITION}
-          className="absolute inset-0 flex flex-col items-center justify-center"
+          className="absolute inset-0 flex flex-col items-center justify-center overflow-hidden"
           style={{ backgroundColor: theme.bg, color: theme.text }}
         >
           <Content theme={theme} />
