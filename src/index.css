@@ -1,0 +1,30 @@
+@import 'tailwindcss';
+
+:root {
+  --color-teal: #0d5257;
+  --color-gray: #4b4e53;
+  --color-offwhite: #f2f2f2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+body {
+  font-family: 'Jost', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}

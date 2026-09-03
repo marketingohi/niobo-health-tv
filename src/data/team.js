@@ -1,0 +1,16 @@
+export const TEAM = [
+  { name: 'Manuel de Bethencourt', role: 'Dirección General' },
+  { name: 'Lola Casas', role: 'Directora de RRHH' },
+  { name: 'Agustín Díaz', role: 'Director Financiero' },
+  { name: 'Antonio Juzgado', role: 'Director médico' },
+  { name: 'Gabriella Cordero', role: 'Directora de marketing' },
+  { name: 'Pamela Huertas', role: 'Responsable de compras' },
+  { name: 'José Gutiérrez', role: 'Director de laboratorio' },
+  { name: 'José Zorraquín', role: 'Área Manager' },
+  { name: 'Manuel Garrote', role: 'Área Manager' },
+  { name: 'Marimar Arnanz', role: 'Directora de formación' },
+  { name: 'Lisbet Guzmán', role: 'Contabilidad' },
+  { name: 'Beatríz Santiago', role: 'Asistente de RRHH' },
+  { name: 'José Gómez', role: 'Content Creator' },
+  { name: 'María López', role: 'Facturación' },
+];
