@@ -37,7 +37,7 @@ export default function Proposito({ theme }) {
         </div>
 
         <motion.p
-          className="mt-8 max-w-xl text-2xl font-extralight leading-relaxed tracking-wide"
+          className="mt-6 max-w-xl text-2xl font-extralight leading-relaxed tracking-wide"
           style={{ color: theme.subtext }}
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -59,7 +59,7 @@ export default function Proposito({ theme }) {
           <motion.img
             src={brandsColor}
             alt="OHI · COPU · IPAO · ADHA"
-            className="mt-10 w-full max-w-[1000px]"
+            className="mt-5 w-full max-w-[620px]"
             initial={{ opacity: 0, x: '-6%' }}
             animate={{ opacity: 1, x: '0%' }}
             transition={{ duration: 0.9, delay: 1.5, ease: EASE }}

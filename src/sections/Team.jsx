@@ -26,7 +26,7 @@ export default function Team({ theme }) {
 
   return (
     <div className="w-full max-w-[1700px] px-10">
-      <div className="relative mb-12 flex flex-col items-center py-4">
+      <div className="relative mb-7 flex flex-col items-center py-2">
         <motion.span
           aria-hidden="true"
           className="pointer-events-none absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-[clamp(3.2rem,_6vw,_9rem)] font-bold uppercase leading-none tracking-wide text-white"
@@ -49,7 +49,7 @@ export default function Team({ theme }) {
         </motion.h2>
       </div>
 
-      <div className="grid grid-cols-5 gap-x-8 gap-y-10">
+      <div className="grid grid-cols-5 gap-x-8 gap-y-5">
         {slots.map((m, i) => {
           const { x, y, rotate } = dealTransform(i);
           return (
@@ -66,11 +66,11 @@ export default function Team({ theme }) {
                     <img
                       src={icon}
                       alt=""
-                      className="h-[116px] w-[116px] object-contain"
+                      className="h-[90px] w-[90px] object-contain"
                       style={{ opacity: 0.85 }}
                     />
                   )}
-                  <p className="mt-4 max-w-[180px] text-sm leading-relaxed">
+                  <p className="mt-3 max-w-[170px] text-sm leading-relaxed">
                     <span className="font-bold" style={{ color: theme.text }}>
                       +150 profesionales más
                     </span>{' '}
@@ -81,9 +81,9 @@ export default function Team({ theme }) {
                 </div>
               ) : (
                 <>
-                  <TeamAvatar name={m.name} size={116} />
+                  <TeamAvatar name={m.name} size={90} />
                   <span
-                    className="mt-4 text-sm font-medium tracking-wide"
+                    className="mt-3 text-sm font-medium tracking-wide"
                     style={{ color: theme.text }}
                   >
                     {m.name}

@@ -21,9 +21,9 @@ function ImagePlaceholderIcon() {
 // Full-bleed filmstrip: all 4 photos side by side, always visible — no
 // cycling. Each falls back to a neutral placeholder until the real photo
 // lands at the path passed in.
-export default function PhotoStrip({ photos }) {
+export default function PhotoStrip({ photos, height = 300 }) {
   return (
-    <div className="flex h-[300px] w-full">
+    <div className="flex w-full" style={{ height }}>
       {photos.map((src, i) => (
         <motion.div
           key={i}

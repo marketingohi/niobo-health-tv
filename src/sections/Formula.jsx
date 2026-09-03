@@ -13,12 +13,12 @@ export default function Formula({ theme }) {
     <div className="absolute inset-0 flex flex-col items-center justify-center">
       <div className="w-full max-w-6xl px-10">
         <motion.div
-          className="mb-6 flex flex-col items-center gap-2 text-center"
+          className="mb-4 flex flex-col items-center gap-1 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: EASE }}
         >
-          <img src={niElement} alt="" className="h-16 w-16" />
+          <img src={niElement} alt="" className="h-12 w-12" />
           <p className="text-xl font-light tracking-wide" style={{ color: theme.subtext }}>
             La fórmula ganadora
           </p>
@@ -32,7 +32,7 @@ export default function Formula({ theme }) {
         </motion.div>
 
         <motion.p
-          className="mx-auto mb-8 max-w-2xl text-center text-base font-light leading-relaxed tracking-wide"
+          className="mx-auto mb-6 max-w-2xl text-center text-base font-light leading-relaxed tracking-wide"
           style={{ color: theme.subtext }}
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -66,8 +66,8 @@ export default function Formula({ theme }) {
         </div>
       </div>
 
-      <div className="mt-8 w-full">
-        <PhotoStrip photos={photos} />
+      <div className="mt-5 w-full">
+        <PhotoStrip photos={photos} height={180} />
       </div>
     </div>
   );
