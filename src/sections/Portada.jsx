@@ -10,14 +10,14 @@ export default function Portada({ theme }) {
       <Logo theme={theme} size="compact" />
 
       <motion.p
-        className="mt-5 text-lg font-light italic tracking-wide sm:mt-6 sm:text-xl"
-        style={{ color: theme.subtext }}
+        className="mt-6 max-w-xl text-2xl font-bold leading-relaxed tracking-wide sm:mt-8 sm:text-3xl"
+        style={{ color: '#4B4E53' }}
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={VIEWPORT}
         transition={{ duration: 0.6, delay: 0.15, ease: EASE }}
       >
-        Descubre el ecosistema que nos respalda
+        Bienvenid@ al ecosistema que nos respalda
       </motion.p>
 
       <motion.div
