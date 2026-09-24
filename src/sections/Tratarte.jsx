@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import VideoPlaceholder from '../components/VideoPlaceholder';
 import { EASE, VIEWPORT } from '../lib/motion';
 
 export default function Tratarte({ theme }) {
@@ -31,15 +30,6 @@ export default function Tratarte({ theme }) {
         constante, la cercanía de siempre, respaldo especializado si tu caso se complica, y una
         prótesis fabricada bajo nuestro propio estándar de calidad.
       </motion.p>
-      <motion.div
-        className="mt-8 sm:mt-10"
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={VIEWPORT}
-        transition={{ duration: 0.7, delay: 0.15, ease: EASE }}
-      >
-        <VideoPlaceholder />
-      </motion.div>
     </div>
   );
 }
