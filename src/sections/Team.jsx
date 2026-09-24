@@ -9,7 +9,7 @@ export default function Team({ theme }) {
   const slots = [...TEAM, { closing: true }];
 
   return (
-    <div className="w-full max-w-[1700px] px-6 py-16 sm:px-10 sm:py-24">
+    <div className="mx-auto flex w-full max-w-[1700px] flex-col items-center px-6 py-16 text-center sm:px-10 sm:py-24">
       <div className="relative mb-10 flex flex-col items-center py-2 sm:mb-14">
         <motion.span
           aria-hidden="true"

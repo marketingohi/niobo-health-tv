@@ -51,6 +51,8 @@ export default function Timeline({ theme }) {
       return next === cur ? [cur, 0] : [next, delta];
     });
 
+  const goDesktop = (delta) => setActive((cur) => Math.max(0, Math.min(LAST, cur + delta)));
+
   const progressPct = (active / LAST) * 100;
   const mobileItem = TIMELINE[mobileIndex];
 
@@ -156,7 +158,8 @@ export default function Timeline({ theme }) {
       </div>
 
       {/* Tablet/desktop: cumulative zigzag roadmap */}
-      <div className="relative hidden h-[380px] sm:block">
+      <div className="hidden sm:block">
+      <div className="relative h-[380px]">
         <div
           className="absolute left-0 right-0 top-1/2 h-0 -translate-y-1/2 border-t-2 border-dashed"
           style={{ borderColor: 'rgba(75,78,83,0.3)' }}
@@ -194,8 +197,11 @@ export default function Timeline({ theme }) {
                   {icon && <img src={icon} alt="" className="h-full w-full" />}
                 </div>
               ) : (
-                <span
-                  className="block rounded-full"
+                <button
+                  type="button"
+                  aria-label={`Ver hito ${t.year}`}
+                  onClick={() => setActive(i)}
+                  className="block cursor-pointer rounded-full"
                   style={{
                     width: revealed ? 11 : 7,
                     height: revealed ? 11 : 7,
@@ -250,6 +256,49 @@ export default function Timeline({ theme }) {
             </div>
           );
         })}
+      </div>
+
+      <div className="mt-6 flex items-center justify-center gap-4">
+        <button
+          type="button"
+          aria-label="Hito anterior"
+          onClick={() => goDesktop(-1)}
+          disabled={active === 0}
+          className="flex h-10 w-10 items-center justify-center rounded-full border transition-opacity disabled:opacity-30"
+          style={{ borderColor: '#0D5257' }}
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M15 6l-6 6 6 6"
+              stroke="#0D5257"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
+        <span className="text-xs font-light uppercase tracking-[0.3em] text-[#4B4E53]">
+          {String(active + 1).padStart(2, '0')} / {String(TIMELINE.length).padStart(2, '0')}
+        </span>
+        <button
+          type="button"
+          aria-label="Hito siguiente"
+          onClick={() => goDesktop(1)}
+          disabled={active === LAST}
+          className="flex h-10 w-10 items-center justify-center rounded-full border transition-opacity disabled:opacity-30"
+          style={{ borderColor: '#0D5257' }}
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M9 6l6 6-6 6"
+              stroke="#0D5257"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
       </div>
     </div>
   );

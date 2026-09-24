@@ -4,7 +4,7 @@ import { EASE, VIEWPORT } from '../lib/motion';
 
 export default function Historia({ theme }) {
   return (
-    <div className="flex w-full flex-col items-center px-6 py-16 sm:px-10 sm:py-24">
+    <div className="mx-auto flex w-full flex-col items-center px-6 py-16 text-center sm:px-10 sm:py-24">
       <div className="relative mb-6 flex flex-col items-center py-4">
         <motion.span
           aria-hidden="true"

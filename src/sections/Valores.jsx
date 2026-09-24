@@ -4,7 +4,7 @@ import { EASE, VIEWPORT } from '../lib/motion';
 
 export default function Valores({ theme }) {
   return (
-    <div className="flex w-full flex-col items-center px-6 py-16 sm:px-10 sm:py-24">
+    <div className="mx-auto flex w-full flex-col items-center px-6 py-16 text-center sm:px-10 sm:py-24">
       <div className="relative mb-10 flex flex-col items-center py-4">
         <motion.span
           aria-hidden="true"
@@ -30,11 +30,11 @@ export default function Valores({ theme }) {
         </motion.h2>
       </div>
 
-      <div className="flex w-full max-w-[1800px] flex-col items-center gap-12 lg:flex-row lg:items-center lg:justify-between lg:gap-0">
+      <div className="mx-auto flex w-full max-w-[1600px] flex-col items-center gap-12 lg:flex-row lg:items-start lg:justify-center lg:gap-10 xl:gap-16">
         {VALUES.map((v, i) => (
           <motion.div
             key={`${v.letter}-${i}`}
-            className="relative flex w-full flex-1 flex-col items-center justify-center px-3 lg:w-auto"
+            className="relative flex w-full flex-1 flex-col items-center justify-center px-3 lg:w-[220px] lg:flex-none"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={VIEWPORT}

@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
-import VideoPlaceholder from '../components/VideoPlaceholder';
+import { getBrandsColor } from '../lib/assets';
 import { EASE, VIEWPORT } from '../lib/motion';
 
 export default function Cierre({ theme }) {
+  const brandsColor = getBrandsColor();
+
   return (
-    <div className="flex w-full flex-col items-center px-6 py-16 sm:px-10 sm:py-24">
+    <div className="mx-auto flex w-full flex-col items-center px-6 py-16 text-center sm:px-10 sm:py-24">
       <div className="relative mb-6 flex flex-col items-center py-2">
         <motion.span
           aria-hidden="true"
@@ -30,15 +32,28 @@ export default function Cierre({ theme }) {
         </motion.h2>
       </div>
 
-      <motion.div
-        className="w-full max-w-[1400px]"
+      <motion.p
+        className="max-w-xl text-xl font-light leading-relaxed tracking-wide sm:text-2xl"
+        style={{ color: theme.subtext }}
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={VIEWPORT}
         transition={{ duration: 0.7, delay: 0.25, ease: EASE }}
       >
-        <VideoPlaceholder name="niobo-video-final" size="large" />
-      </motion.div>
+        ¿Estáis preparad@s?
+      </motion.p>
+
+      {brandsColor && (
+        <motion.img
+          src={brandsColor}
+          alt="OHI · COPU · IPAO · ADHA"
+          className="mt-10 w-full max-w-[700px] sm:mt-14"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={VIEWPORT}
+          transition={{ duration: 0.7, delay: 0.4, ease: EASE }}
+        />
+      )}
     </div>
   );
 }
