@@ -6,15 +6,20 @@ import Mark from './Mark';
 // Drop the real lockup at /src/assets/logo/niobo-health-logo.svg (or .png)
 // and it replaces the hand-built mark + wordmark below with a simple
 // fade/scale reveal of the real file.
-export default function Logo({ theme }) {
+export default function Logo({ theme, size = 'normal' }) {
   const src = getLogo(theme.mode);
+  const compact = size === 'compact';
 
   if (src) {
     return (
       <motion.img
         src={src}
         alt="Niobo Health"
-        className="h-auto max-h-24 w-auto max-w-[88vw] sm:max-h-32 md:max-h-40"
+        className={
+          compact
+            ? 'h-auto max-h-14 w-auto max-w-[80vw] sm:max-h-16'
+            : 'h-auto max-h-24 w-auto max-w-[88vw] sm:max-h-32 md:max-h-40'
+        }
         initial={{ opacity: 0, scale: 0.94 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={VIEWPORT}
