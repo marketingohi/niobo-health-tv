@@ -33,8 +33,8 @@ export default function Cierre({ theme }) {
       </div>
 
       <motion.p
-        className="max-w-xl text-xl font-light leading-relaxed tracking-wide sm:text-2xl"
-        style={{ color: theme.subtext }}
+        className="max-w-xl text-2xl font-bold leading-relaxed tracking-wide sm:text-3xl"
+        style={{ color: '#4B4E53' }}
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={VIEWPORT}
