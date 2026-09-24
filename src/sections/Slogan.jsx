@@ -1,20 +1,19 @@
 import { motion } from 'framer-motion';
+import { EASE, VIEWPORT } from '../lib/motion';
 import { getBrandsRow, getPhoto } from '../lib/assets';
 
-const EASE = [0.65, 0, 0.35, 1];
-
-// Headline -> subtitle finishes around 1.25s in; the brands row waits until
-// then so it never competes with the text for attention.
-const HEADLINE_DELAY = 0.2;
-const SUBTITLE_DELAY = 0.55;
-const BRANDS_DELAY = 1.55;
+// Headline -> subtitle finishes first; the brands row waits until then so
+// it never competes with the text for attention.
+const HEADLINE_DELAY = 0.1;
+const SUBTITLE_DELAY = 0.3;
+const BRANDS_DELAY = 0.6;
 
 export default function Slogan({ theme }) {
   const bgPhoto = getPhoto('seccion2-fondo');
   const brandsRow = getBrandsRow();
 
   return (
-    <>
+    <div className="relative flex w-full flex-col items-center px-6 py-20 sm:px-10 sm:py-28">
       {bgPhoto && (
         <div className="absolute inset-0 overflow-hidden">
           <img src={bgPhoto} alt="" className="h-full w-full object-cover" />
@@ -25,22 +24,24 @@ export default function Slogan({ theme }) {
         </div>
       )}
 
-      <div className="relative z-10 max-w-4xl px-10 text-center">
+      <div className="relative z-10 mx-auto max-w-4xl text-center">
         <motion.h1
-          className="text-6xl font-bold leading-snug tracking-wide"
+          className="text-3xl font-bold leading-snug tracking-wide sm:text-5xl md:text-6xl"
           style={{ color: theme.text }}
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={VIEWPORT}
           transition={{ duration: 0.7, delay: HEADLINE_DELAY, ease: EASE }}
         >
           De tu sonrisa a tu salud, un mismo ecosistema.
         </motion.h1>
 
         <motion.p
-          className="mx-auto mt-8 max-w-3xl text-lg font-light leading-relaxed tracking-wide"
+          className="mx-auto mt-6 max-w-3xl text-base font-light leading-relaxed tracking-wide sm:mt-8 sm:text-lg"
           style={{ color: theme.subtext }}
           initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={VIEWPORT}
           transition={{ duration: 0.7, delay: SUBTITLE_DELAY, ease: EASE }}
         >
           Nuestro compromiso va más allá de la consulta dental: con clínicas integradas en
@@ -54,13 +55,14 @@ export default function Slogan({ theme }) {
 
       {brandsRow && (
         <motion.div
-          className="relative z-10 mt-14 w-full overflow-hidden"
+          className="relative z-10 mt-10 w-full overflow-hidden sm:mt-14"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          whileInView={{ opacity: 1 }}
+          viewport={VIEWPORT}
           transition={{ duration: 0.6, delay: BRANDS_DELAY, ease: EASE }}
         >
           <motion.div
-            className="flex w-max items-center gap-16"
+            className="flex w-max items-center gap-10 sm:gap-16"
             animate={{ x: ['-50%', '0%'] }}
             transition={{ duration: 26, repeat: Infinity, ease: 'linear' }}
           >
@@ -70,12 +72,12 @@ export default function Slogan({ theme }) {
                 src={brandsRow}
                 alt={i === 0 ? 'OHI · ADHA · IPAO · COPU' : ''}
                 aria-hidden={i !== 0}
-                className="h-20 w-auto flex-none"
+                className="h-14 w-auto flex-none sm:h-20"
               />
             ))}
           </motion.div>
         </motion.div>
       )}
-    </>
+    </div>
   );
 }

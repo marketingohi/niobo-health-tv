@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
-
-const EASE = [0.65, 0, 0.35, 1];
+import { EASE, VIEWPORT } from '../lib/motion';
 
 function ImagePlaceholderIcon() {
   return (
@@ -18,19 +17,23 @@ function ImagePlaceholderIcon() {
   );
 }
 
-// Full-bleed filmstrip: all 4 photos side by side, always visible — no
-// cycling. Each falls back to a neutral placeholder until the real photo
-// lands at the path passed in.
+// Desktop/tablet: all 4 photos side by side, always visible.
+// Mobile: the same strip becomes a horizontally swipeable, scroll-snapped
+// carousel (native touch scrolling — no custom gesture code needed).
 export default function PhotoStrip({ photos, height = 300 }) {
   return (
-    <div className="flex w-full" style={{ height }}>
+    <div
+      className="flex w-full snap-x snap-mandatory overflow-x-auto sm:snap-none sm:overflow-visible"
+      style={{ height }}
+    >
       {photos.map((src, i) => (
         <motion.div
           key={i}
-          className="relative h-full flex-1 overflow-hidden"
+          className="relative h-full w-[85%] flex-none snap-center overflow-hidden sm:w-auto sm:flex-1"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: i * 0.12, ease: EASE }}
+          whileInView={{ opacity: 1 }}
+          viewport={VIEWPORT}
+          transition={{ duration: 0.7, delay: i * 0.1, ease: EASE }}
         >
           {src ? (
             <img src={src} alt="" className="h-full w-full object-cover" />

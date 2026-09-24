@@ -20,7 +20,8 @@ export default function Mark({ color = '#0D5257', size = 120 }) {
         stroke={color}
         strokeWidth="5"
         initial={{ pathLength: 0, opacity: 0 }}
-        animate={{ pathLength: 1, opacity: 1 }}
+        whileInView={{ pathLength: 1, opacity: 1 }}
+        viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.8, ease: EASE }}
       />
 
@@ -30,7 +31,8 @@ export default function Mark({ color = '#0D5257', size = 120 }) {
         strokeWidth="4"
         strokeLinecap="round"
         initial={{ pathLength: 0, opacity: 0 }}
-        animate={{ pathLength: 1, opacity: 1 }}
+        whileInView={{ pathLength: 1, opacity: 1 }}
+        viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.5, delay: 0.6, ease: EASE }}
       />
       <motion.path
@@ -39,7 +41,8 @@ export default function Mark({ color = '#0D5257', size = 120 }) {
         strokeWidth="4"
         strokeLinecap="round"
         initial={{ pathLength: 0, opacity: 0 }}
-        animate={{ pathLength: 1, opacity: 1 }}
+        whileInView={{ pathLength: 1, opacity: 1 }}
+        viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.5, delay: 1.2, ease: EASE }}
       />
 
@@ -50,7 +53,8 @@ export default function Mark({ color = '#0D5257', size = 120 }) {
         fill={color}
         style={{ transformOrigin: '44px 22px' }}
         initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.35, delay: 0.4, ease: POP }}
       />
       <motion.circle
@@ -60,7 +64,8 @@ export default function Mark({ color = '#0D5257', size = 120 }) {
         fill={color}
         style={{ transformOrigin: '70px 46px' }}
         initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.35, delay: 1.05, ease: POP }}
       />
       <motion.circle
@@ -70,7 +75,8 @@ export default function Mark({ color = '#0D5257', size = 120 }) {
         fill={color}
         style={{ transformOrigin: '28px 68px' }}
         initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.35, delay: 1.65, ease: POP }}
       />
     </svg>

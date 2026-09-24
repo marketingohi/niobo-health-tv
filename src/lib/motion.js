@@ -1,17 +1,22 @@
-// Shared motion language for the whole deck. Every transition in the app —
-// the main section change and the timeline's own left/right sub-navigation —
-// pulls its duration/easing from here, so the deck reads as one continuous
-// piece of motion instead of a different animation per surface.
-export const TRANSITION = { duration: 0.9, ease: [0.65, 0, 0.35, 1] };
+// Shared motion language for the whole landing page. Every reveal uses the
+// same easing curve and the same "once" viewport rule — animations fire the
+// first time a section scrolls into view and never replay, so the page
+// reads as one consistent piece of motion instead of a different effect
+// per section.
+export const EASE = [0.65, 0, 0.35, 1];
 
-export const verticalVariants = {
-  enter: (direction) => ({ opacity: 0, y: direction > 0 ? '6%' : '-6%' }),
-  center: { opacity: 1, y: '0%' },
-  exit: (direction) => ({ opacity: 0, y: direction > 0 ? '-6%' : '6%' }),
+// amount: how much of the element must be visible before it fires.
+export const VIEWPORT = { once: true, amount: 0.3 };
+export const VIEWPORT_EARLY = { once: true, amount: 0.15 };
+
+export const fadeUp = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: VIEWPORT,
 };
 
-export const horizontalVariants = {
-  enter: (direction) => ({ opacity: 0, x: direction > 0 ? '4%' : '-4%' }),
-  center: { opacity: 1, x: '0%' },
-  exit: (direction) => ({ opacity: 0, x: direction > 0 ? '-4%' : '4%' }),
+export const fadeIn = {
+  initial: { opacity: 0 },
+  whileInView: { opacity: 1 },
+  viewport: VIEWPORT,
 };

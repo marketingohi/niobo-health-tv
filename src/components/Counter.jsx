@@ -1,19 +1,18 @@
-import { animate, motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { animate, motion, useInView } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+import { EASE } from '../lib/motion';
 
-const EASE = [0.65, 0, 0.35, 1];
-
-// Counts up from 0 to `value` on every mount (sections remount each time
-// they become active, so this replays every time the viewer arrives here).
-// The prefix/suffix only fade in once the count settles, so the eye reads
-// the number landing before the unit label confirms what it means.
+// Counts up from 0 to `value` the first time it scrolls into view, then
+// stays put — the prefix/suffix only fade in once the count settles, so
+// the eye reads the number landing before the unit label confirms it.
 export default function Counter({ value, prefix = '', suffix = '', duration = 1.3, delay = 0 }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.6 });
   const [display, setDisplay] = useState(0);
   const [done, setDone] = useState(false);
 
   useEffect(() => {
-    setDisplay(0);
-    setDone(false);
+    if (!inView) return;
     const controls = animate(0, value, {
       duration,
       delay,
@@ -22,10 +21,10 @@ export default function Counter({ value, prefix = '', suffix = '', duration = 1.
       onComplete: () => setDone(true),
     });
     return () => controls.stop();
-  }, [value, duration, delay]);
+  }, [inView, value, duration, delay]);
 
   return (
-    <span className="tabular-nums">
+    <span ref={ref} className="tabular-nums">
       <motion.span
         initial={{ opacity: 0 }}
         animate={{ opacity: done ? 1 : 0 }}
