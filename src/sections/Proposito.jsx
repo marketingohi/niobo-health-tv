@@ -11,11 +11,11 @@ export default function Proposito({ theme }) {
 
   return (
     <div className="relative flex w-full flex-col md:flex-row">
-      <div className="flex flex-1 flex-col justify-center px-6 py-16 text-left sm:px-10 md:py-24 md:pl-20 md:pr-14">
+      <div className="flex flex-1 flex-col items-center justify-center px-6 py-16 text-center sm:px-10 md:items-start md:py-24 md:pl-20 md:pr-14 md:text-left">
         <div className="relative py-2 sm:py-4">
           <motion.span
             aria-hidden="true"
-            className="pointer-events-none absolute left-0 top-1/2 z-0 -translate-y-1/2 whitespace-nowrap text-[clamp(2.2rem,_5.5vw,_8rem)] font-bold uppercase leading-none tracking-wide"
+            className="pointer-events-none absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-[clamp(2.2rem,_5.5vw,_8rem)] font-bold uppercase leading-none tracking-wide md:left-0 md:translate-x-0"
             style={{ color: '#0D5257', opacity: 0.1 }}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 0.1 }}
