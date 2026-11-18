@@ -1,7 +1,7 @@
 export const TEAM = [
   { name: 'Manuel de Bethencourt', role: 'Dirección General' },
   { name: 'Lola Casas', role: 'Directora de RRHH' },
-  { name: 'Agustín Díaz', role: 'Director Financiero' },
+  { name: 'Cristina Moreno', role: 'Director Financiero' },
   { name: 'Antonio Juzgado', role: 'Director médico' },
   { name: 'Gabriella Cordero', role: 'Directora de marketing' },
   { name: 'Pamela Huertas', role: 'Responsable de compras' },
