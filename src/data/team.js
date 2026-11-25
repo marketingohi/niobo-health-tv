@@ -12,5 +12,5 @@ export const TEAM = [
   { name: 'Lisbet Guzmán', role: 'Contabilidad' },
   { name: 'Beatríz Santiago', role: 'Asistente de RRHH' },
   { name: 'José Gómez', role: 'Content Creator' },
-  { name: 'María López', role: 'Facturación' },
+  { name: 'Ma. Jose López', role: 'Facturación' },
 ];
